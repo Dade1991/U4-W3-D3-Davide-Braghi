@@ -17,8 +17,6 @@ public class Persona {
     private LocalDate dataDiNascita;
     @Enumerated(EnumType.STRING)
     private SessoPersona sessoPersona;
-    @ManyToMany(mappedBy = "lista_partecipazioni")
-    private List<Partecipazione> partecipazioneList;
 
     public Persona() {
     }
@@ -27,14 +25,13 @@ public class Persona {
                    String cognome,
                    String email,
                    LocalDate dataDiNascita,
-                   SessoPersona sessoPersona,
-                   List<Partecipazione> partecipazioneList) {
+                   SessoPersona sessoPersona
+    ) {
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
         this.dataDiNascita = dataDiNascita;
         this.sessoPersona = sessoPersona;
-        this.partecipazioneList = partecipazioneList;
     }
 
     public long getId() {
@@ -80,10 +77,7 @@ public class Persona {
     public void setSessoPersona(SessoPersona sessoPersona) {
         this.sessoPersona = sessoPersona;
     }
-
-    public List<Partecipazione> getPartecipazioneList() {
-        return partecipazioneList;
-    }
+    
 
     @Override
     public String toString() {
@@ -94,7 +88,6 @@ public class Persona {
                 ", email='" + email + '\'' +
                 ", dataDiNascita=" + dataDiNascita +
                 ", sessoPersona=" + sessoPersona +
-                ", partecipazioneList=" + partecipazioneList +
                 '}';
     }
 }
