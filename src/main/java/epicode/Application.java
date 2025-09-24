@@ -13,7 +13,7 @@ import java.util.Locale;
 import java.util.Random;
 
 public class Application {
-    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("u4d12");
+    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("U4-W3-D3-Davide-Braghi");
 
     public static void main(String[] args) {
         EntityManager em = emf.createEntityManager();
@@ -42,5 +42,5 @@ public class Application {
 
         em.close();
         emf.close();
-   }
+    }
 }

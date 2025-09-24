@@ -2,12 +2,14 @@ package epicode.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "eventi")
 public class Event {
     @Id
     @GeneratedValue
+    @Column(name = "event_id")
     private long id;
 
     private String titolo;
@@ -16,6 +18,14 @@ public class Event {
     @Enumerated(EnumType.STRING)
     private TipoEvento tipoEvento;
     private int numeroMassimoPartecipanti;
+
+    @ManyToMany
+    @JoinTable(name = "eventi_locations",
+            joinColumns = @JoinColumn(name = "event_id", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "location_id", nullable = false)
+    )
+
+    private List<Location> locations;
 
     public Event() {
     }
