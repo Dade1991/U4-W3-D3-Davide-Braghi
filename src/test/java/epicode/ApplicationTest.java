@@ -1,4 +1,4 @@
-package davidebraghi;
+package epicode;
 
 import org.junit.jupiter.api.Test;
 
